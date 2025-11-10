@@ -13,4 +13,3 @@ it performs a simulation of about 1 million no of times.
 
 **how to run** : simulator
 
-**URL** : https://github.com/piyush07440/coc-project-ludo-dice-simulator
