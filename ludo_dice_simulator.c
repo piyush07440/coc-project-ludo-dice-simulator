@@ -1,10 +1,11 @@
-
 #include <stdio.h>
 #include <stdlib.h> // For rand(), srand()
 #include <time.h>   // For time()
 #include <math.h>   // For fabs()
 // Define the total number of simulations
 #define TOTAL_ROLLS 1000000
+
+int roll_one_die(void){ return rand() % 6 + 1; }
 
 int main()
 {
@@ -33,8 +34,10 @@ int main()
     for (int i = 0; i < TOTAL_ROLLS; i++)
     {
         // Calculate the sum by rolling 2 die.
-        int sum = (rand() % 6) + (rand() % 6) + 2; // basically we get no from 0to 5 so we did it twice nd add 2 to start from 1 instead of 0.
-        counts[sum - 2]++;                         // because we are not including 1 in sum as dice atleat gives sum of 2, also index starts from 0;
+        int sum = 0;
+        sum += roll_one_die();
+        sum += roll_one_die();
+        counts[sum - 2]++; // because we are not including 1 in sum as dice atleat gives sum of 2, also index starts from 0;
     }
     printf("Simulation complete.\n\n");
 
